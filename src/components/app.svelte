@@ -1,5 +1,5 @@
 <script>
-    const target = "World";
+    import ContributionsBoard from "./contributions/board.svelte";
 </script>
 
-<p>Hello, {target}!</p>
+<ContributionsBoard />
