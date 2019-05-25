@@ -11,6 +11,9 @@
 const {GraphQLClient} = require("graphql-request");
 const ora = require("ora");
 const chalk = require("chalk");
+const {promisify} = require("util");
+const fs = require("fs");
+const writeFile = promisify(fs.writeFile);
 
 const spinner = ora();
 
@@ -47,16 +50,11 @@ const fetchBatch = async (cursor = null) => {
                     endCursor
                   }
                   nodes {
-                    name
                     login
                     contributionsCollection {
                       hasAnyContributions
-                      startedAt
-                      endedAt
                       contributionCalendar {
-                        totalContributions
                         weeks {
-                          firstDay
                           contributionDays {
                             weekday
                             contributionCount
@@ -75,7 +73,7 @@ const fetchBatch = async (cursor = null) => {
 
     spinner.succeed();
 
-    if (false && hasNextPage) {
+    if (hasNextPage) {
         const nextNodes = await fetchBatch(endCursor);
         nodes.push(...nextNodes);
     }
@@ -84,7 +82,8 @@ const fetchBatch = async (cursor = null) => {
 };
 
 (async () => {
-    let members;
+    let members,
+        contributions = {};
 
     try {
         members = await fetchBatch();
@@ -93,5 +92,56 @@ const fetchBatch = async (cursor = null) => {
         console.log("💣", chalk.red("error:"), error.message);
     }
 
-    console.log(members);
+    members.forEach(
+        ({
+            login,
+            contributionsCollection: {
+                hasAnyContributions,
+                contributionCalendar: {weeks},
+            },
+        }) => {
+            if (!hasAnyContributions) {
+                return;
+            }
+
+            weeks.forEach(({contributionDays}) => {
+                contributionDays.forEach(
+                    ({date, weekday, contributionCount}) => {
+                        if (!contributionCount) {
+                            return;
+                        }
+
+                        const [key] = date.split("T");
+
+                        if (!contributions[key]) {
+                            contributions[key] = {date, weekday, members: []};
+                        }
+
+                        contributions[key].members.push([
+                            contributionCount,
+                            login,
+                        ]);
+                    },
+                );
+            });
+        },
+    );
+
+    const values = Object.values(contributions);
+
+    values.sort((a, b) => {
+        if (a.date < b.date) {
+            return -1;
+        }
+        if (a.date > b.date) {
+            return 1;
+        }
+        return 0;
+    });
+
+    await writeFile(
+        "./data/contributions.json",
+        JSON.stringify(values, null, 2),
+        "utf8",
+    );
 })();
