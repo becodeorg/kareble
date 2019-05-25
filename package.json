@@ -4,6 +4,7 @@
   "private": true,
   "description": "⚙️  An overview of all BeCodian's Contributions on GitHub",
   "scripts": {
+    "fetch:data": "node ./scripts/fetch-data.js"
   },
   "repository": {
     "type": "git",
@@ -14,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/becodeorg/kareble/issues"
   },
-  "homepage": "https://github.com/becodeorg/kareble#readme"
+  "homepage": "https://github.com/becodeorg/kareble#readme",
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "graphql-request": "^1.8.2",
+    "ora": "^3.4.0"
+  }
 }
