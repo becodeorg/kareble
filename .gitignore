@@ -1,6 +1,6 @@
 data/*.json
 node_modules
 public/*.js
-public/*.css
+public/main.css
 public/*.map
 /.eslintcache
