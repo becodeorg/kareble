@@ -1,0 +1,18 @@
+{
+  "name": "@becode/kareble",
+  "version": "0.0.1",
+  "private": true,
+  "description": "⚙️  An overview of all BeCodian's Contributions on GitHub",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/becodeorg/kareble.git"
+  },
+  "author": "leny <leny@becode.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/becodeorg/kareble/issues"
+  },
+  "homepage": "https://github.com/becodeorg/kareble#readme"
+}
