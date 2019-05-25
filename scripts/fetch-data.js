@@ -19,7 +19,7 @@ const spinner = ora();
 
 const [, , token] = process.argv;
 
-const colors = ["#00b0d1", "#56c4d8", "#81cedb", "#a0d8dd", "#dddddd"];
+const colors = ["highest", "high", "mid", "low", "lowest"];
 
 if (!token) {
     console.log("💣", chalk.red("error:"), "No GitHub token given!");
@@ -47,6 +47,7 @@ const fetchBatch = async (cursor = null) => {
         query fetch($cursor:String) {
             organization(login: "becodeorg") {
                 membersWithRole(first: 25, after: $cursor) {
+                  totalCount
                   pageInfo {
                     hasNextPage
                     endCursor
@@ -189,6 +190,7 @@ const fetchBatch = async (cursor = null) => {
                             return val >= day.totalContributions ? ind : cur;
                         }, 0)
                     ];
+                day.members = day.members.sort(([a], [b]) => +b - +a);
                 return day;
             }),
         );
@@ -204,6 +206,7 @@ const fetchBatch = async (cursor = null) => {
             JSON.stringify(
                 {
                     buildDate: Date.now(),
+                    totalMembers: members.length,
                     totalContributions: grandTotalContributions,
                     weeks,
                 },
