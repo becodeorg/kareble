@@ -24,7 +24,7 @@
         width: 100%;
         cursor: pointer;
         transition: opacity 0.25s ease-in-out;
-        border: 1px solid white;
+        border: 2px solid white;
     }
 
     .blurred {
@@ -33,7 +33,7 @@
 
     .selected {
         opacity: 1;
-        box-shadow: 0 0 0 1px white, 0 0 0 2px #243a5b;
+        box-shadow: 0 0 0 2px white, 0 0 0 4px #243a5b;
     }
 
     .day:hover {
@@ -58,6 +58,16 @@
 
     .day.lowest rect {
         fill: #eeeeee;
+    }
+
+    @media screen and (min-width: 768px) {
+        .day {
+            border: 1px solid white;
+        }
+
+        .selected {
+            box-shadow: 0 0 0 1px white, 0 0 0 2px #243a5b;
+        }
     }
 </style>
 

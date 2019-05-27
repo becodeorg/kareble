@@ -17,7 +17,7 @@
 <style>
     li {
         position: relative;
-        width: 49%;
+        width: 100%;
         margin-bottom: 1rem;
         background: #a1d8dd;
         padding: 0.25rem 0.5rem;
@@ -55,6 +55,8 @@
     }
 
     span {
+        display: inline-block;
+        width: 3.75rem;
         font: bold 2rem "Montserrat", sans-serif;
         color: white;
     }
@@ -67,6 +69,18 @@
         font-weight: normal;
         color: white;
         font-size: 1.4rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        li {
+            width: 49%;
+        }
+
+        span {
+            display: inline;
+            font: bold 2rem "Montserrat", sans-serif;
+            color: white;
+        }
     }
 </style>
 

@@ -25,18 +25,35 @@
     .week {
         position: relative;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        width: 1.92%;
+        width: 100%;
     }
 
     .label {
         position: absolute;
-        top: -1.5rem;
-        left: 0;
-        font-size: 1rem;
+        width: 4rem;
+        top: 1rem;
+        left: -5rem;
+        font-size: 1.5rem;
         color: #243a5b;
+        text-align: right;
+    }
+
+    @media screen and (min-width: 768px) {
+        .week {
+            flex-direction: column;
+            justify-content: space-between;
+            width: 1.92%;
+        }
+
+        .label {
+            top: -1.5rem;
+            left: 0;
+            font-size: 1rem;
+            text-align: left;
+        }
     }
 </style>
 

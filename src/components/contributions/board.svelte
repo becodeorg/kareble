@@ -37,10 +37,10 @@
 <style>
     .board {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding-top: 2rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        padding: 0 0 0 5rem;
     }
 
     h3 {
@@ -51,15 +51,37 @@
     }
 
     .day-label {
-        min-height: 2.4rem;
-        font-size: 1.4rem;
-        line-height: 2.4rem;
-        text-align: center;
+        display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+        h3 br {
+            display: none;
+        }
+
+        .board {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 2rem 0 0;
+        }
+
+        .day-label {
+            display: block;
+            min-height: 2.4rem;
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            text-align: center;
+        }
     }
 </style>
 
 <div class="wrapper">
-    <h3>{totalContributions} contributions by {totalMembers} BeCodians</h3>
+    <h3>
+         {totalContributions} contributions 
+        <br />
+        by {totalMembers} BeCodians
+    </h3>
 
     <div
         class="board"

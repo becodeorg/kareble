@@ -33,13 +33,18 @@ body {
 main {
     position: relative;
     display: block;
-    width: 70%;
-    max-width: 68rem;
+    width: 100%;
     min-height: 15rem;
     margin: 16rem auto 8rem;
     padding: 5rem 1.2rem 1.5rem;
     background: white;
     box-shadow: .25rem .25rem .5rem rgba(0, 0, 0, .25);
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        width: 68rem;
+    }
 }
 
 h1 {
