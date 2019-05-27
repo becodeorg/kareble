@@ -1,12 +1,10 @@
 <script>
+    import Header from "./header.svelte";
     import ContributionsBoard from "./contributions/board.svelte";
     import {totalMembers} from "../../data/contributions.json";
 </script>
 
-<h1>
-    <strong>Last year</strong>
-    <em>...on GitHub</em>
-</h1>
+<Header />
 
 <p>
     Here at
