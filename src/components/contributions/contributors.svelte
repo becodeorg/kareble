@@ -80,8 +80,8 @@
         </time>
 
         <strong>
-             {selectedDay.totalContributions} contributions by {selectedDay.members.length}
-            BeCodians
+             {selectedDay.totalContributions} contribution{selectedDay.totalContributions > 1 ? 's' : ''}
+            by {selectedDay.members.length} BeCodians
         </strong>
     </h4>
 

@@ -11,6 +11,7 @@
 
     export let day;
     export let selectedDay;
+    export let onHoverDay;
     export let onSelectDay;
 
     $: selected = selectedDay && selectedDay.date === day.date;
@@ -64,8 +65,9 @@
     class="day {day.color}"
     class:selected
     class:blurred
+    on:mouseover={() => onHoverDay(day)}
     title="{DateTime.fromFormat(day.date, 'yyyy-MM-dd').toFormat('dd MMMM yyyy')}:
-    {day.totalContributions} contributions">
+    {day.totalContributions} contribution{day.totalContributions > 1 ? 's' : ''}">
     <svg viewbox="0 0 10 10" on:click={() => onSelectDay(day)}>
         <rect fill="black" width="10" height="10" />
     </svg>

@@ -15,6 +15,7 @@
     export let days;
     export let prevWeekMonth = null;
     export let selectedDay;
+    export let onHoverDay;
     export let onSelectDay;
 
     $: firstDay = DateTime.fromFormat(days[0].date, "yyyy-MM-dd");
@@ -44,6 +45,6 @@
         <strong class="label"> {firstDay.monthShort} </strong>
     {/if}
     {#each days as day}
-        <Day {day} {selectedDay} {onSelectDay} />
+        <Day {day} {selectedDay} {onSelectDay} {onHoverDay} />
     {/each}
 </div>
