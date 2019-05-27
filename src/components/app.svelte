@@ -17,12 +17,10 @@
 
 <p>
     Here at
-    <a href="https://becode.org">BeCode</a>
-    , we like
+    <a href="https://becode.org">BeCode</a>, we love
     <strong>git</strong>
     and
-    <strong>GitHub</strong>
-    .
+    <strong>GitHub</strong>.
 </p>
 
 <p>
@@ -31,9 +29,8 @@
 </p>
 
 <p>
-    And now, introducing… our
-    <em>blue squares</em>
-    !
+    And now, introducing... our
+    <em>blue squares</em>!
     <br />
     All the contributions of the last year, from all the BeCodians!
 </p>
