@@ -11,7 +11,8 @@
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
     "serve:dev": "sirv public --dev",
-    "work": "run-p serve:dev build:watch"
+    "work": "run-p serve:dev build:watch",
+    "deploy": "npx gh-pages -d public"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-unicorn": "^8.0.2",
+    "gh-pages": "^2.0.1",
     "graphql-request": "^1.8.2",
     "husky": "^2.1.0",
     "lint-staged": "^8.1.5",
