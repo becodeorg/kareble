@@ -37,6 +37,6 @@
 </style>
 
 <header>
-    <h1>Last year at BeCode</h1>
-    <h2>...on GitHub</h2>
+    <h1>Last year at BeCode…</h1>
+    <h2>…on GitHub</h2>
 </header>
