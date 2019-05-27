@@ -35,9 +35,10 @@
     }
 
     h3 {
-        margin-bottom: 0.5rem;
-        font-size: 1.6rem;
-        color: #16232e;
+        margin: 2.5rem auto 1.5rem;
+        text-align: center;
+        font-size: 2rem;
+        color: #243a5b;
     }
 </style>
 
