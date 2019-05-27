@@ -1,5 +1,14 @@
 <script>
+    /* becodeorg/kareble
+     *
+     * /src/components/app.svelte - App Component
+     *
+     * coded by leny@BeCode
+     * started at 25/05/2019
+     */
+
     import Header from "./header.svelte";
+    import Footer from "./footer.svelte";
     import ContributionsBoard from "./contributions/board.svelte";
     import {totalMembers} from "../../data/contributions.json";
 </script>
@@ -29,3 +38,5 @@
 </p>
 
 <ContributionsBoard />
+
+<Footer />

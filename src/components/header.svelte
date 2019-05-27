@@ -1,3 +1,13 @@
+<script>
+    /* becodeorg/kareble
+     *
+     * /src/components/header.svelte - Header Component
+     *
+     * coded by leny@BeCode
+     * started at 27/05/2019
+     */
+</script>
+
 <style>
     h1 {
         position: absolute;
