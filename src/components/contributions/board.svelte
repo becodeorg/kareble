@@ -17,18 +17,23 @@
         align-items: flex-start;
     }
 
+    h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.6rem;
+        color: #16232e;
+    }
+
     .week {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        width: 1.92%;
     }
 
     .day {
         display: block;
-        width: 10px;
-        height: 10px;
-        border: 1px solid white;
+        width: 100%;
         cursor: pointer;
         transition: opacity 0.25s ease-in-out;
     }
@@ -46,24 +51,28 @@
         opacity: 1;
     }
 
-    .day.highest {
-        background: #243a5b;
+    .day {
+        border: 1px solid white;
     }
 
-    .day.high {
-        background: #50a7b2;
+    .day.highest rect {
+        fill: #243a5b;
     }
 
-    .day.mid {
-        background: #58c4d8;
+    .day.high rect {
+        fill: #50a7b2;
     }
 
-    .day.low {
-        background: #a1d8dd;
+    .day.mid rect {
+        fill: #58c4d8;
     }
 
-    .day.lowest {
-        background: #eeeeee;
+    .day.low rect {
+        fill: #a1d8dd;
+    }
+
+    .day.lowest rect {
+        fill: #eeeeee;
     }
 </style>
 
@@ -74,14 +83,17 @@
         {#each weeks as week}
             <div class="week">
                 {#each week as day}
-                    <div
+                    <svg
+                        viewbox="0 0 10 10"
                         on:click={() => {
                             selectedDay = selectedDay && selectedDay.date === day.date ? null : day;
                         }}
                         class="day {day.color}
                         {selectedDay && selectedDay.date === day.date ? 'selected' : ''}"
                         title="{day.date}: {day.totalContributions}
-                        contributions" />
+                        contributions">
+                        <rect fill="black" width="10" height="10" />
+                    </svg>
                 {/each}
             </div>
         {/each}

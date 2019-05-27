@@ -17,16 +17,13 @@
 </p>
 
 <p>
-    All of our {totalMembers}
-    <em>BeCodians</em>
-    , coaches or learners, are using GitHub on daily basis, collecting green
-    squares on their profiles.
+    All of our {totalMembers} BeCodians, coaches or learners, are using GitHub
+    on daily basis, collecting green squares on their profiles.
 </p>
 
 <p>
     And now, introducing... our
-    <em>blue squares</em>
-    !
+    <em>blue squares!</em>
     <br />
     All the contributions of the last year, from all the BeCodians!
 </p>
