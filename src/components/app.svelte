@@ -30,7 +30,7 @@
 
 <p>
     And now, introducing... our
-    <em>blue squares</em>!
+    <a href="https://medium.com/becode/collecting-squares-together-cc3177a65c86" target="_new"><em>blue squares</em></a>!
     <br />
     All the contributions of the last year, from all the BeCodians!
 </p>
