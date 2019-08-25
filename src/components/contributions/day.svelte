@@ -7,7 +7,7 @@
      * started at 27/05/2019
      */
 
-    import {DateTime} from "luxon";
+    import dayjs from "dayjs";
 
     export let day;
     export let selectedDay;
@@ -76,7 +76,7 @@
     class:selected
     class:blurred
     on:mouseover={() => onHoverDay(day)}
-    title="{DateTime.fromFormat(day.date, 'yyyy-MM-dd').toFormat('dd MMMM yyyy')}:
+    title="{dayjs(day.date, 'YYYY-MM-DD').format('DD MMMM YYYY')}:
     {day.totalContributions} contribution{day.totalContributions > 1 ? 's' : ''}">
     <svg viewbox="0 0 10 10" on:click={() => onSelectDay(day)}>
         <rect fill="black" width="10" height="10" />

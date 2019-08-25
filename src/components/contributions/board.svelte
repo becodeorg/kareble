@@ -7,7 +7,7 @@
      * started at 25/05/2019
      */
 
-    import {DateTime} from "luxon";
+    import dayjs from "dayjs";
     import {
         buildDate,
         totalMembers,
@@ -92,7 +92,7 @@
                 {days}
                 {index}
                 {selectedDay}
-                prevWeekMonth={DateTime.fromFormat(weeks[index > 0 ? index - 1 : 0][0].date, 'yyyy-MM-dd').month}
+                prevWeekMonth={dayjs(weeks[index > 0 ? index - 1 : 0][0].date, 'YYYY-MM-DD').month()}
                 onHoverDay={handleHoverDay}
                 onSelectDay={handleSelectDay} />
         {/each}
@@ -100,7 +100,7 @@
 
     <div class="day-label">
         {#if hoveredDay}
-            {DateTime.fromFormat(hoveredDay.date, 'yyyy-MM-dd').toFormat('cccc, dd MMMM yyyy')}
+            {dayjs(hoveredDay.date, 'YYYY-MM-DD').format('dddd, DD MMMM YYYY')}
             - {hoveredDay.totalContributions} contribution{hoveredDay.totalContributions > 1 ? 's' : ''}
         {/if}
     </div>

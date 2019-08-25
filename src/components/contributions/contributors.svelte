@@ -7,7 +7,7 @@
      * started at 27/05/2019
      */
 
-    import {DateTime} from "luxon";
+    import dayjs from "dayjs";
     import Contributor from "./contributor.svelte";
 
     export let selectedDay;
@@ -72,10 +72,9 @@
 <div class="contributors">
     <h4>
         <time
-            datetime={DateTime.fromFormat(selectedDay.date, 'yyyy-MM-dd').toHTTP()}>
+            datetime={dayjs(selectedDay.date, 'YYYY-MM-DD').toISOString()}>
             <span>
-                 {DateTime.fromFormat(selectedDay.date, 'yyyy-MM-dd').toFormat('cccc, dd MMMM yyyy')}
-
+                 {dayjs(selectedDay.date, 'YYYY-MM-DD').format('dddd, DD MMMM YYYY')}
             </span>
         </time>
 

@@ -7,7 +7,7 @@
      * started at 27/05/2019
      */
 
-    import {DateTime} from "luxon";
+    import dayjs from "dayjs";
 
     import Day from "./day.svelte";
 
@@ -18,7 +18,7 @@
     export let onHoverDay;
     export let onSelectDay;
 
-    $: firstDay = DateTime.fromFormat(days[0].date, "yyyy-MM-dd");
+    $: firstDay = dayjs(days[0].date, "YYYY-MM-DD");
 </script>
 
 <style>
@@ -58,8 +58,8 @@
 </style>
 
 <div class="week">
-    {#if firstDay.month !== prevWeekMonth}
-        <strong class="label"> {firstDay.monthShort} </strong>
+    {#if firstDay.month() !== prevWeekMonth}
+        <strong class="label"> {firstDay.format("MMM")} </strong>
     {/if}
     {#each days as day}
         <Day {day} {selectedDay} {onSelectDay} {onHoverDay} />
