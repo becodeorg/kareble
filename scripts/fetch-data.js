@@ -15,6 +15,8 @@ const {promisify} = require("util");
 const fs = require("fs");
 const writeFile = promisify(fs.writeFile);
 
+const wait = ms => new Promise(r => setTimeout(r, ms));
+
 const spinner = ora();
 
 const [, , token] = process.argv;
@@ -46,7 +48,7 @@ const fetchBatch = async (cursor = null) => {
         `
         query fetch($cursor:String) {
             organization(login: "becodeorg") {
-                membersWithRole(first: 50, after: $cursor) {
+                membersWithRole(first: 10, after: $cursor) {
                   totalCount
                   pageInfo {
                     hasNextPage
@@ -77,6 +79,11 @@ const fetchBatch = async (cursor = null) => {
     spinner.succeed();
 
     if (hasNextPage) {
+        if (!(batchCount % 10)) {
+            spinner.start("Wait between batches");
+            await wait(5000);
+            spinner.succeed();
+        }
         const nextNodes = await fetchBatch(endCursor);
         nodes.push(...nextNodes);
     }
