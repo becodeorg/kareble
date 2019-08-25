@@ -46,7 +46,7 @@ const fetchBatch = async (cursor = null) => {
         `
         query fetch($cursor:String) {
             organization(login: "becodeorg") {
-                membersWithRole(first: 25, after: $cursor) {
+                membersWithRole(first: 50, after: $cursor) {
                   totalCount
                   pageInfo {
                     hasNextPage

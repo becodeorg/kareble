@@ -1,10 +1,10 @@
 name: Build & deploy
 
-on: 
+on:
   schedule:
   # - cron: '0 12 * * SUN'
-  - cron: '10 16 * * SUN'
-  
+  - cron: '35 16 * * SUN'
+
 jobs:
   build:
     runs-on: ubuntu-latest
