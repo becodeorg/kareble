@@ -23,6 +23,8 @@ jobs:
         npm install
         npm run fetch:data "${{ secrets.FETCH_DATA_TOKEN }}"
         npm run build
+        git config user.email "${{ secrets.DEPLOY_EMAIL }}"
+        git config user.name "${{ secrets.DEPLOY_NAME }}"
         npm run deploy
       env:
         CI: true
