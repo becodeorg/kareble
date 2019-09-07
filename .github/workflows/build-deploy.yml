@@ -2,8 +2,7 @@ name: Build & deploy
 
 on:
   schedule:
-  # - cron: '0 12 * * SUN'
-  - cron: '0 17 * * SUN'
+  - cron: '0 10 * * SUN'
 
 jobs:
   build:
@@ -19,13 +18,18 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, fetch data, build, and deploy
+    - name: npm install, fetch data and build
       run: |
         npm install
         npm run fetch:data "${{ secrets.FETCH_DATA_TOKEN }}"
         npm run build
-        git config user.email "${{ secrets.DEPLOY_EMAIL }}"
-        git config user.name "${{ secrets.DEPLOY_NAME }}"
-        npm run deploy
       env:
         CI: true
+    - name: deploy
+      uses: crazy-max/ghaction-github-pages@master
+      with:
+        target_branch: gh-pages
+        build_dir: public
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_PAT: ${{ secrets.FETCH_DATA_TOKEN }}
