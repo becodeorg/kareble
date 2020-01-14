@@ -24,8 +24,8 @@
 </p>
 
 <p>
-    All of our {totalMembers} BeCodians, coaches or learners, are using GitHub
-    on daily basis, collecting green squares on their profiles.
+    Our {totalMembers} BeCodians, coaches or learners, are using GitHub
+    on a daily basis, collecting little green squares on their profiles.
 </p>
 
 <p>
