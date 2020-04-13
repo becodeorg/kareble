@@ -28,7 +28,7 @@
     "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.8.3",
-    "@becode/eslint-config": "^0.8.2",
+    "@becode/eslint-config": "^0.9.1",
     "babel-eslint": "^10.1.0",
     "chalk": "^3.0.0",
     "dayjs": "^1.8.23",
