@@ -19,7 +19,7 @@ jobs:
         npm run fetch:data "${{ secrets.FETCH_DATA_TOKEN }}"
         npm run build
     - name: deploy
-      uses: crazy-max/ghaction-github-pages@master
+      uses: crazy-max/ghaction-github-pages@v1
       with:
         target_branch: gh-pages
         build_dir: public
