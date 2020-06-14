@@ -8,6 +8,7 @@
 
 /* eslint-disable no-console */
 
+require("cross-fetch/polyfill");
 const {GraphQLClient} = require("graphql-request");
 const ora = require("ora");
 const chalk = require("chalk");
