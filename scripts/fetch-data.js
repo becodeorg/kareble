@@ -8,8 +8,6 @@
 
 /* eslint-disable no-console */
 
-require("node-fetch");
-
 const {GraphQLClient} = require("graphql-request");
 const ora = require("ora");
 const chalk = require("chalk");
