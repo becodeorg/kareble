@@ -44,7 +44,7 @@
     "ora": "^5.0.0",
     "prettier": "^2.0.5",
     "prettier-plugin-svelte": "^1.1.0",
-    "rollup": "^2.23.1",
+    "rollup": "^2.26.4",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-json": "^4.0.0",
