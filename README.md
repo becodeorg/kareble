@@ -40,6 +40,8 @@ You can also use the `npm run work` command to run a local preview server ([loca
 
 The app is hosted on GitHub Pages. Simply run `npm run deploy` (after a build) to deploy the app.
 
+> **NOTE:** a _GitHub Workflow_ is configured to fetch data, build & deploy the code _every sunday_.
+
 * * *
 
 ## TODO
