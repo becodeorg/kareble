@@ -12,6 +12,7 @@ import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import {terser} from "rollup-plugin-terser";
+import css from "rollup-plugin-css-only";
 
 const PRODUCTION = !process.env.ROLLUP_WATCH;
 
@@ -29,9 +30,11 @@ export default {
             include: ["./src/**/*.js"],
         }),
         svelte({
-            dev: !PRODUCTION,
-            css: css => css.write("public/main.css"),
+            compilerOptions: {
+                dev: !PRODUCTION,
+            },
         }),
+        css({output: "main.css"}),
         resolve(),
         commonjs(),
         PRODUCTION && terser(),
