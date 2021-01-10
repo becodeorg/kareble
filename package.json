@@ -1,6 +1,6 @@
 {
   "name": "@becode/kareble",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "description": "An overview of all BeCodian's Contributions on GitHub",
   "scripts": {
