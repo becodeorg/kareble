@@ -90,7 +90,6 @@
         {#each weeks as days, index}
             <Week
                 {days}
-                {index}
                 {selectedDay}
                 prevWeekMonth={dayjs(weeks[index > 0 ? index - 1 : 0][0].date, 'YYYY-MM-DD').month()}
                 onHoverDay={handleHoverDay}

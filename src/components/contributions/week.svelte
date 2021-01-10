@@ -11,7 +11,6 @@
 
     import Day from "./day.svelte";
 
-    export let index;
     export let days;
     export let prevWeekMonth = null;
     export let selectedDay;
