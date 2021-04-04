@@ -1,0 +1,89 @@
+/* becodeorg/kareble
+ *
+ * /public/global.css - global css styles
+ *
+ * coded by leny@BeCode
+ * started at 26/05/2019
+ */
+
+* {
+    text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font: 62.5%/1.5 "Mandali", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #16232e url(./img/becode-seal.png) top .5rem center no-repeat;
+    background-size: auto 15rem;
+}
+
+body {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+main {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 15rem;
+    margin: 16rem auto 8rem;
+    padding: 5rem 1.2rem 1.5rem;
+    background: white;
+    box-shadow: .25rem .25rem .5rem rgba(0, 0, 0, .25);
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        width: 68rem;
+    }
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+a {
+    background-color: transparent;
+    color: #245060;
+    transition: text-decoration-color .5s ease-in-out, color .15s ease-in-out;
+    text-decoration-color: transparent;
+}
+
+a:hover {
+    text-decoration-color: #245060;
+    color: #63c3d1;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+small {
+    font-size: 80%;
+}
+
+img {
+    border-style: none;
+}
